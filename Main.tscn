@@ -54,6 +54,14 @@ transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, 5.31371, 4
 [node name="Wall7" type="CSGBox3D" parent="World/Map"]
 transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, -4.22989, 3.93457, 23.5539)
 
+[node name="Label3D" type="Label3D" parent="World/Map"]
+transform = Transform3D(-0.412977, 0, 0.910741, 0, 1, 0, -0.910741, 0, -0.412977, -3.75615, 4, 18.3622)
+text = "This is the left"
+
+[node name="Label3D2" type="Label3D" parent="World/Map"]
+transform = Transform3D(-0.018604, 0, -0.999827, 0, 1, 0, 0.999827, 0, -0.018604, 5.02863, 4, 19.145)
+text = "This is the right"
+
 [node name="Player" type="Node3D" parent="World"]
 script = ExtResource("1")
 
