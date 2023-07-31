@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://clw77e6wtpxd"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1"]
+
+[sub_resource type="Environment" id="Environment_nqge6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2lke"]
+size = Vector2(88, 667)
+
+[node name="Main" type="Node"]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Map" type="Node3D" parent="World"]
+
+[node name="Floor" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(15.171, 0, 0, 0, 0.111386, 0, 0, 0, 14.0544, 0, 0, 16.2004)
+
+[node name="Floor2" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(15.5253, 0, 0, 0, 0.111386, 0, 0, 0, 19.0745, 0, 8.40601, 14.8562)
+
+[node name="Wall1" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(0.51382, 0, 0, 0, 8.80967, 0, 0, 0, 5.06741, 7.13356, 3.68296, 20.6732)
+size = Vector3(1, 1.08961, 1)
+
+[node name="Wall8" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(0.51382, 0, 0, 0, 8.80967, 0, 0, 0, 5.06741, 6.59591, 3.8104, 11.4072)
+
+[node name="Wall9" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(0.51382, 0, 0, 0, 8.80967, 0, 0, 0, 5.06741, -6.03416, 4.16414, 11.2486)
+
+[node name="Wall10" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(0.51382, 0, 0, 0, 1.98527, 0, 0, 0, 9.39067, -6.1221, 7.54902, 16.065)
+
+[node name="Wall11" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(0.51382, 0, 0, 0, 1.98527, 0, 0, 0, 9.39067, 7.0229, 8.01144, 15.1616)
+
+[node name="Wall2" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(0.51382, 0, 0, 0, 8.80967, 0, 0, 0, 6.16435, -5.98312, 4.20249, 20.6581)
+
+[node name="Wall3" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(14.4495, 0, 0, 0, 10.2722, 0, 0, 0, 0.955591, 0.372937, 3.53078, 8.56654)
+
+[node name="Wall4" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(14.4495, 0, 0, 0, 5.44607, 0, 0, 0, 0.955591, 0.833143, 0.385427, 23.6198)
+size = Vector3(1, 1.05937, 1)
+
+[node name="Wall5" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(14.4495, 0, 0, 0, 1.45663, 0, 0, 0, 0.955591, 0.833143, 7.47805, 23.5539)
+
+[node name="Wall6" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, 5.31371, 4.28919, 23.5539)
+
+[node name="Wall7" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, -4.22989, 3.93457, 23.5539)
+
+[node name="Player" type="Node3D" parent="World"]
+script = ExtResource("1")
+
+[node name="Movements" type="Node3D" parent="World/Player"]
+
+[node name="Head" type="Node3D" parent="World/Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.99598, 16.14)
+
+[node name="Camera3D" type="Camera3D" parent="World/Player/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305681, -3.4869, 0.0447826)
+current = true
+fov = 65.0
+near = 0.01
+far = 8192.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95157, 17.2652)
+omni_range = 4096.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nqge6")
+
+[node name="Overlay" type="Node2D" parent="."]
+
+[node name="Left" type="Node2D" parent="Overlay"]
+
+[node name="DetectLeft" type="Area2D" parent="Overlay/Left"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overlay/Left/DetectLeft"]
+position = Vector2(41, 323.5)
+shape = SubResource("RectangleShape2D_c2lke")
+
+[node name="Right" type="Node2D" parent="Overlay"]
+
+[node name="DetectRight" type="Area2D" parent="Overlay/Right"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overlay/Right/DetectRight"]
+position = Vector2(1115, 323.5)
+shape = SubResource("RectangleShape2D_c2lke")
+
+[connection signal="mouse_entered" from="Overlay/Left/DetectLeft" to="World/Player" method="_on_detect_left_mouse_entered"]
+[connection signal="mouse_entered" from="Overlay/Right/DetectRight" to="World/Player" method="_on_detect_right_mouse_entered"]

@@ -1,0 +1,7 @@
+CollisionShape2D
+Area2D
+Node2D
+MeshInstance2D
+OmniLight3D
+WorldEnvironment
+Node3D
