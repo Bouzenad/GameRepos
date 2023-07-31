@@ -9,12 +9,25 @@ var moving = false
 
 func _on_detect_left_mouse_entered() -> void:
 	#checks if you r looking forward
-	if moving == false and head.rotation_degrees.y != 90:
+	if moving == false and head.rotation_degrees.y < 90 and head.rotation_degrees.y != 180:
 		look_left()
 
 func _on_detect_right_mouse_entered() -> void:
-	if moving == false and head.rotation_degrees.y != -90:
+	if moving == false and head.rotation_degrees.y > -90 and head.rotation_degrees.y != 180:
 		look_right()
+		
+func _on_detect_bottom_mouse_entered() -> void:
+	if moving == false and head.rotation_degrees.y == 0:
+		look_behind()
+		
+
+func look_behind():
+	moving = true
+	while head.rotation_degrees.y < 175: #I suspect this might cause some bugs, will have to revise it
+		head.rotate_y(0.1)
+		await get_tree().create_timer(0.01).timeout
+	head.rotation_degrees.y = 180
+	moving = false
 
 
 func look_left():
