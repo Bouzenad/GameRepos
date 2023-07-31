@@ -29,4 +29,3 @@ func _on_detect_right_mouse_entered() -> void:
 			head.rotate_y(-0.1)
 			await get_tree().create_timer(0.01).timeout
 		moving = false
-s
