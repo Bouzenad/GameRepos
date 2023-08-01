@@ -324,8 +324,8 @@ libraries = {
 }
 
 [node name="OmniLight3D" type="OmniLight3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.06233, 16.7338)
-omni_range = 4096.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241173, 3.7566, 16.7338)
+omni_range = 8.0
 
 [node name="Animatronics" type="Node3D" parent="World"]
 

@@ -1,15 +1,26 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< Updated upstream
 ::res://::1690903705
 default_env.tres::Environment::6475503468103331188::1690903644::0::1::::<><>::
 icon.png::CompressedTexture2D::3632902161786781470::1690837654::1690837654::1::::<><>::
 Main.tscn::PackedScene::164480450181625893::1690903676::0::1::::<><>::uid://cjbr526c3b573::::res://Sounds/Ambience/Ambience1.wav<>res://Scripts/Main Prot Scene/Player.gd<>res://Scripts/Main Prot Scene/AI/Freddy.gd<>uid://coeg14l8fbncd::::res://Images/UI/MoveArrow.png
+=======
+::res://::1690902658
+default_env.tres::Environment::6475503468103331188::1690902343::0::1::::<><>::
+icon.png::CompressedTexture2D::3632902161786781470::1690837654::1690837654::1::::<><>::
+Main.tscn::PackedScene::164480450181625893::1690902512::0::1::::<><>::uid://cjbr526c3b573::::res://Sounds/Ambience/Ambience1.wav<>res://Scripts/Main Prot Scene/Player.gd<>res://Scripts/Main Prot Scene/AI/Freddy.gd<>uid://coeg14l8fbncd::::res://Images/UI/MoveArrow.png
+>>>>>>> Stashed changes
 ::res://Assets/::1690900292
 ::res://Images/::1690902512
 ::res://Images/UI/::1690902512
 MoveArrow.png::CompressedTexture2D::5764154963609128499::1690902512::1690902512::1::::<><>::
 ::res://Scenes/::1690900303
 Main.tscn::PackedScene::164480450181625893::1690899975::0::1::::<><>::res://Player.gd<>uid://cjbr526c3b573::::res://Sounds/Ambience/Ambience1.wav
+<<<<<<< Updated upstream
 ::res://Scripts/::1690903676
+=======
+::res://Scripts/::1690900313
+>>>>>>> Stashed changes
 ::res://Scripts/Main Prot Scene/::1690900453
 Player.gd::GDScript::-1::1690898652::0::1::::<>Node3D<>::
 ::res://Scripts/Main Prot Scene/AI/::1690902303
