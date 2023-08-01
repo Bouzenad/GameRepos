@@ -227,6 +227,7 @@ albedo_color = Color(0.00392157, 0.176471, 0.356863, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_glgn0"]
 
 [sub_resource type="Environment" id="Environment_nqge6"]
+ambient_light_energy = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1308n"]
 size = Vector2(90, 398)
@@ -324,7 +325,8 @@ libraries = {
 }
 
 [node name="OmniLight3D" type="OmniLight3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241173, 3.7566, 16.7338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241173, 3.7566, 15.0036)
+shadow_enabled = true
 omni_range = 8.0
 
 [node name="Animatronics" type="Node3D" parent="World"]
@@ -346,7 +348,7 @@ mesh = SubResource("BoxMesh_glgn0")
 [node name="Right Door" type="Node3D" parent="World/Animatronics/Bonnie/Model"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Animatronics/Bonnie/Model/Right Door"]
-transform = Transform3D(0.303525, 0.250607, 0.990646, 1.14036, 6.16326, -0.0965306, -1.97636, 3.59466, 0.0964426, 8.38325, 3.29189, 14.3157)
+transform = Transform3D(0.303525, 0.250607, 0.990646, 1.14036, 6.16326, -0.0965306, -1.97636, 3.59466, 0.0964426, 7.36757, 3.29189, 14.3157)
 material_override = SubResource("StandardMaterial3D_d4a8w")
 mesh = SubResource("BoxMesh_glgn0")
 
