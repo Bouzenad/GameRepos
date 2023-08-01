@@ -213,7 +213,7 @@ transform = Transform3D(14.4495, 0, 0, 0, 1.45663, 0, 0, 0, 0.955591, 0.833143, 
 transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, 5.31371, 4.28919, 23.5539)
 
 [node name="Wall7" type="CSGBox3D" parent="World/Map"]
-transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, -4.22989, 3.93457, 23.5539)
+transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, -4.22989, 4.32329, 23.5539)
 
 [node name="Label3D" type="Label3D" parent="World/Map"]
 transform = Transform3D(-0.412977, 0, 0.910741, 0, 1, 0, -0.910741, 0, -0.412977, -3.75615, 4, 18.3622)
