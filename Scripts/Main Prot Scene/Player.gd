@@ -6,6 +6,7 @@ var moving = false
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var CamAnim = $Head/HeadMovement
+@onready var Overlay = get_node("/root/Main/Overlay")
 
 
 func _on_detect_left_mouse_entered() -> void:
@@ -29,17 +30,30 @@ func look_behind():
 	moving = true
 	if head.rotation_degrees.y == 0:
 		CamAnim.play("TurnBehind")
+		Overlay.get_node("Left/TextureRect").visible = false
+		Overlay.get_node("Right/TextureRect").visible = false
+		Overlay.get_node("Top/TextureRect").visible = false
 	else:
 		CamAnim.play("TurnBackBehind")
+		Overlay.get_node("Left/TextureRect").visible = true
+		Overlay.get_node("Right/TextureRect").visible = true
+		Overlay.get_node("Top/TextureRect").visible = true
 	await get_tree().create_timer(0.2).timeout
+	get_node("Flashlight/Click").play()
 	moving = false
 	
 func look_up():
 	moving = true
 	if camera.rotation_degrees.x == 0:
 		CamAnim.play("TurnUp")
+		Overlay.get_node("Left/TextureRect").visible = false
+		Overlay.get_node("Right/TextureRect").visible = false
+		Overlay.get_node("Bottom/TextureRect").visible = false
 	else:
 		CamAnim.play("TurnBackUp")
+		Overlay.get_node("Left/TextureRect").visible = true
+		Overlay.get_node("Right/TextureRect").visible = true
+		Overlay.get_node("Bottom/TextureRect").visible = true
 	await  get_tree().create_timer(0.2).timeout
 	moving = false
 
@@ -49,8 +63,14 @@ func look_left():
 	moving = true
 	if head.rotation_degrees.y == 0:
 		CamAnim.play("TurnLeft")
+		Overlay.get_node("Left/TextureRect").visible = false
+		Overlay.get_node("Top/TextureRect").visible = false
+		Overlay.get_node("Bottom/TextureRect").visible = false
 	else:
 		CamAnim.play("TurnBackRight")
+		Overlay.get_node("Right/TextureRect").visible = true
+		Overlay.get_node("Top/TextureRect").visible = true
+		Overlay.get_node("Bottom/TextureRect").visible = true
 	await get_tree().create_timer(0.2).timeout
 	moving = false
 
@@ -60,7 +80,14 @@ func look_right():
 	moving = true
 	if head.rotation_degrees.y == 0:
 		CamAnim.play("TurnRight")
+		Overlay.get_node("Right/TextureRect").visible = false
+		Overlay.get_node("Top/TextureRect").visible = false
+		Overlay.get_node("Bottom/TextureRect").visible = false
 	else:
 		CamAnim.play("TurnBackLeft")
+		Overlay.get_node("Left/TextureRect").visible = true
+		Overlay.get_node("Top/TextureRect").visible = true
+		Overlay.get_node("Bottom/TextureRect").visible = true
+		
 	await get_tree().create_timer(0.2).timeout
 	moving = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://clw77e6wtpxd"]
+[gd_scene load_steps=24 format=3 uid="uid://clw77e6wtpxd"]
 
 [ext_resource type="AudioStream" uid="uid://cjbr526c3b573" path="res://Sounds/Ambience/Ambience1.wav" id="1_rnekf"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/Player.gd" id="2_culn2"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/Flashlight.gd" id="3_rdjdn"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/AI/Freddy.gd" id="3_x25lq"]
+[ext_resource type="AudioStream" uid="uid://d4hgy3m7uffff" path="res://Sounds/Sfx/FlashlightClick.wav" id="4_0iltr"]
 [ext_resource type="Texture2D" uid="uid://coeg14l8fbncd" path="res://Images/UI/MoveArrow.png" id="4_7c2b5"]
 
 [sub_resource type="Animation" id="Animation_yvfq5"]
@@ -333,6 +334,9 @@ spot_attenuation = 0.554784
 spot_angle = 23.81
 spot_angle_attenuation = 1.56917
 script = ExtResource("3_rdjdn")
+
+[node name="Click" type="AudioStreamPlayer" parent="World/Player/Flashlight"]
+stream = ExtResource("4_0iltr")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241173, 3.7566, 15.0036)

@@ -1,8 +1,8 @@
+AudioStreamPlayer
 SpotLight3D
 CanvasLayer
 TextureRect
 Node3D
-AudioStreamPlayer
 AudioStreamPlayer3D
 AnimationPlayer
 Label3D
