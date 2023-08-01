@@ -1,14 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690900415
-default_env.tres::Environment::6475503468103331188::1690900375::0::1::::<><>::
+::res://::1690901555
+default_env.tres::Environment::6475503468103331188::1690901381::0::1::::<><>::
 icon.png::CompressedTexture2D::3632902161786781470::1690837654::1690837654::1::::<><>::
-Main.tscn::PackedScene::2901679703137681332::1690900375::0::1::::<><>::uid://cjbr526c3b573::::res://Sounds/Ambience/Ambience1.wav<>res://Scripts/Main Prot Scene/Player.gd
+Main.tscn::PackedScene::2901679703137681332::1690901381::0::1::::<><>::uid://cjbr526c3b573::::res://Sounds/Ambience/Ambience1.wav<>res://Scripts/Main Prot Scene/Player.gd<>res://Scripts/Main Prot Scene/AI/Freddy.gd
 ::res://Assets/::1690900292
 ::res://Scenes/::1690900303
-Main.tscn::PackedScene::164480450181625893::1690899975::0::1::::<><>::res://Player.gd<>uid://cjbr526c3b573::::res://Sounds/Ambience/Ambience1.wav
+Main.tscn::PackedScene::164480450181625893::1690899975::0::1::::<><>::res://Player.gd<>uid://cjbr526c3b573
 ::res://Scripts/::1690900313
-::res://Scripts/Main Prot Scene/::1690900313
+::res://Scripts/Main Prot Scene/::1690900453
 Player.gd::GDScript::-1::1690898652::0::1::::<>Node3D<>::
+::res://Scripts/Main Prot Scene/AI/::1690901339
+Freddy.gd::GDScript::-1::1690901339::0::1::::<>Node3D<>::
 ::res://Sounds/::1690898652
 ::res://Sounds/Ambience/::1690899265
 Ambience1.wav::AudioStreamWAV::5407692566724484252::1690898652::1690899265::1::::<><>::

@@ -4,10 +4,13 @@ var stage = null #stage
 var AI = null  #difficulty 
 var mp = null  #movement opportunity count
 var final_stage = 3
-@onready var Freddy: Node3D = $"../Model/Office"
+var door = null
+@onready var BL: Node3D = $"../Model/Left Door"
+@onready var BR : Node3D = $"../Model/Right Door"
 
 func _ready():
-	Freddy.hide()
+	BL.hide()
+	BR.hide()
 	AI = 10
 	stage = 0
 	movement_opportunity()
@@ -27,4 +30,12 @@ func movement_opportunity():
 
 
 func attack_opportunity():
-	Freddy.show()
+	door = randf_range(0, 3)
+	if door > 1.5:
+		door = "right"
+	else:
+		door = "left"
+	if door == "left":
+		BL.show()
+	else:
+		BR.show()
