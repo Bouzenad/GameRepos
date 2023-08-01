@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhluiglhts28g"]
+[gd_scene load_steps=16 format=3 uid="uid://clw77e6wtpxd"]
 
+[ext_resource type="Script" path="res://Player.gd" id="1"]
 [ext_resource type="AudioStream" uid="uid://cjbr526c3b573" path="res://Sounds/Ambience/Ambience1.wav" id="1_rnekf"]
-[ext_resource type="Script" path="res://Scripts/Main Prot Scene/Player.gd" id="2_culn2"]
 
 [sub_resource type="Animation" id="Animation_yvfq5"]
 length = 0.001
@@ -286,12 +286,14 @@ text = "This is the right"
 transform = Transform3D(0.999803, 0.0083577, -0.0180285, -0.0185601, 0.0686247, -0.99747, -0.00709933, 0.997607, 0.0687663, -0.852855, 7.7812, 16.6514)
 text = "This is the top"
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="World/Map"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="World/Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 stream = ExtResource("1_rnekf")
 autoplay = true
+max_distance = 3489.19
 
 [node name="Player" type="Node3D" parent="World"]
-script = ExtResource("2_culn2")
+script = ExtResource("1")
 
 [node name="Movements" type="Node3D" parent="World/Player"]
 
@@ -314,12 +316,6 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.06233, 16.7338)
 omni_range = 4096.0
 
-[node name="Animatronics" type="Node3D" parent="World"]
-
-[node name="Freddy" type="Node3D" parent="World/Animatronics"]
-
-[node name="AI system" type="Node3D" parent="World/Animatronics/Freddy"]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_nqge6")
 
@@ -332,14 +328,6 @@ environment = SubResource("Environment_nqge6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Overlay/Left/DetectLeft"]
 position = Vector2(41, 323.5)
 shape = SubResource("RectangleShape2D_c2lke")
-
-[node name="Top" type="Node2D" parent="Overlay"]
-
-[node name="DetectTop" type="Area2D" parent="Overlay/Top"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Overlay/Top/DetectTop"]
-position = Vector2(589.5, 33)
-shape = SubResource("RectangleShape2D_mhvf6")
 
 [node name="Right" type="Node2D" parent="Overlay"]
 
@@ -357,7 +345,15 @@ shape = SubResource("RectangleShape2D_c2lke")
 position = Vector2(589.5, 621)
 shape = SubResource("RectangleShape2D_mhvf6")
 
+[node name="Top" type="Node2D" parent="Overlay"]
+
+[node name="DetectTop" type="Area2D" parent="Overlay/Top"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overlay/Top/DetectTop"]
+position = Vector2(589.5, 33)
+shape = SubResource("RectangleShape2D_mhvf6")
+
 [connection signal="mouse_entered" from="Overlay/Left/DetectLeft" to="World/Player" method="_on_detect_left_mouse_entered"]
-[connection signal="mouse_entered" from="Overlay/Top/DetectTop" to="World/Player" method="_on_detect_top_mouse_entered"]
 [connection signal="mouse_entered" from="Overlay/Right/DetectRight" to="World/Player" method="_on_detect_right_mouse_entered"]
 [connection signal="mouse_entered" from="Overlay/Bottom/DetectBottom" to="World/Player" method="_on_detect_bottom_mouse_entered"]
+[connection signal="mouse_entered" from="Overlay/Top/DetectTop" to="World/Player" method="_on_detect_top_mouse_entered"]
