@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhluiglhts28g"]
+[gd_scene load_steps=19 format=3 uid="uid://bhluiglhts28g"]
 
 [ext_resource type="AudioStream" uid="uid://cjbr526c3b573" path="res://Sounds/Ambience/Ambience1.wav" id="1_rnekf"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/Player.gd" id="2_culn2"]
+[ext_resource type="Script" path="res://Scripts/Main Prot Scene/AI/Freddy.gd" id="3_x25lq"]
 
 [sub_resource type="Animation" id="Animation_yvfq5"]
 length = 0.001
@@ -219,6 +220,11 @@ _data = {
 "TurnUp": SubResource("Animation_kynki")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4a8w"]
+albedo_color = Color(0.211765, 0.0980392, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_glgn0"]
+
 [sub_resource type="Environment" id="Environment_nqge6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2lke"]
@@ -319,6 +325,16 @@ omni_range = 4096.0
 [node name="Freddy" type="Node3D" parent="World/Animatronics"]
 
 [node name="AI system" type="Node3D" parent="World/Animatronics/Freddy"]
+script = ExtResource("3_x25lq")
+
+[node name="Model" type="Node3D" parent="World/Animatronics/Freddy"]
+
+[node name="Office" type="Node3D" parent="World/Animatronics/Freddy/Model"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Animatronics/Freddy/Model/Office"]
+transform = Transform3D(0.440241, 0, 0.98154, 1.14036, 6.16326, -0.0965306, -1.95047, 3.60339, 0.165106, -7.58814, 3.29189, 13.4643)
+material_override = SubResource("StandardMaterial3D_d4a8w")
+mesh = SubResource("BoxMesh_glgn0")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_nqge6")
