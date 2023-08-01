@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://clw77e6wtpxd"]
+[gd_scene load_steps=25 format=3 uid="uid://clw77e6wtpxd"]
 
 [ext_resource type="AudioStream" uid="uid://cjbr526c3b573" path="res://Sounds/Ambience/Ambience1.wav" id="1_rnekf"]
+[ext_resource type="Script" path="res://Scripts/Main Prot Scene/Main.gd" id="1_tgp4l"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/Player.gd" id="2_culn2"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/Flashlight.gd" id="3_rdjdn"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/AI/Freddy.gd" id="3_x25lq"]
@@ -230,6 +231,9 @@ albedo_color = Color(0.00392157, 0.176471, 0.356863, 1)
 
 [sub_resource type="Environment" id="Environment_nqge6"]
 ambient_light_energy = 0.0
+glow_enabled = true
+glow_normalized = true
+glow_blend_mode = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1308n"]
 size = Vector2(90, 398)
@@ -244,6 +248,7 @@ size = Vector2(90, 398)
 size = Vector2(392, 88)
 
 [node name="Main" type="Node"]
+script = ExtResource("1_tgp4l")
 
 [node name="World" type="Node3D" parent="."]
 
@@ -327,11 +332,13 @@ libraries = {
 }
 
 [node name="Flashlight" type="SpotLight3D" parent="World/Player"]
-transform = Transform3D(-0.964281, 0, -0.264883, 0, 1, 0, 0.264883, 0, -0.964281, 0, 4.57827, 17)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.98671, 17)
 light_color = Color(1, 0.886275, 0.780392, 1)
-spot_range = 34.733
+light_energy = 10.0
+shadow_enabled = true
+spot_range = 35.0
 spot_attenuation = 0.554784
-spot_angle = 23.81
+spot_angle = 21.0
 spot_angle_attenuation = 1.56917
 script = ExtResource("3_rdjdn")
 
