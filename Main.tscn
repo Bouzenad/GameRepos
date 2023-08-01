@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://clw77e6wtpxd"]
+[gd_scene load_steps=26 format=3 uid="uid://clw77e6wtpxd"]
 
 [ext_resource type="AudioStream" uid="uid://cjbr526c3b573" path="res://Sounds/Ambience/Ambience1.wav" id="1_rnekf"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/Main.gd" id="1_tgp4l"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/Player.gd" id="2_culn2"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/Flashlight.gd" id="3_rdjdn"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/AI/Freddy.gd" id="3_x25lq"]
+[ext_resource type="Script" path="res://Scripts/AmbiencePlayer.gd" id="3_xswxk"]
 [ext_resource type="AudioStream" uid="uid://d4hgy3m7uffff" path="res://Sounds/Sfx/FlashlightClick.wav" id="4_0iltr"]
 [ext_resource type="Texture2D" uid="uid://coeg14l8fbncd" path="res://Images/UI/MoveArrow.png" id="4_7c2b5"]
 
@@ -310,6 +311,13 @@ text = "This is the top"
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="World/Map"]
 stream = ExtResource("1_rnekf")
 autoplay = true
+
+[node name="AmbiencePlayer" type="Node3D" parent="World/Map"]
+script = ExtResource("3_xswxk")
+Sounds = ["res://Sounds/Ambience/Ambience2.wav", "res://Sounds/Ambience/Ambience3.wav"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="World/Map/AmbiencePlayer"]
+volume_db = -12.0
 
 [node name="Player" type="Node3D" parent="World"]
 script = ExtResource("2_culn2")

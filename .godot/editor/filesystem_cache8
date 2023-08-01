@@ -1,23 +1,27 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690911374
-default_env.tres::Environment::6475503468103331188::1690908538::0::1::::<><>::
-icon.png::CompressedTexture2D::3632902161786781470::1690837654::1690837654::1::::<><>::
-Main.tscn::PackedScene::164480450181625893::1690911331::0::1::::<><>::uid://cjbr526c3b573::::res://Sounds/Ambience/Ambience1.wav<>res://Scripts/Main Prot Scene/Player.gd<>res://Scripts/Main Prot Scene/Flashlight.gd<>res://Scripts/Main Prot Scene/AI/Freddy.gd<>uid://d4hgy3m7uffff::::res://Sounds/Sfx/FlashlightClick.wav<>uid://coeg14l8fbncd::::res://Images/UI/MoveArrow.png
-::res://Assets/::1690900292
-::res://Images/::1690902512
-::res://Images/UI/::1690902512
-MoveArrow.png::CompressedTexture2D::5764154963609128499::1690902512::1690902512::1::::<><>::
-::res://Scenes/::1690900303
-Main.tscn::PackedScene::164480450181625893::1690899975::0::1::::<><>::res://Player.gd<>uid://cjbr526c3b573::::res://Sounds/Ambience/Ambience1.wav
-::res://Scripts/::1690903732
-Global.gd::GDScript::-1::1690903732::0::1::::<>Node<>::
-::res://Scripts/Main Prot Scene/::1690911331
-Flashlight.gd::GDScript::-1::1690911327::0::1::::<>SpotLight3D<>::
-Player.gd::GDScript::-1::1690911331::0::1::::<>Node3D<>::
-::res://Scripts/Main Prot Scene/AI/::1690902303
-Freddy.gd::GDScript::-1::1690902303::0::1::::<>Node3D<>::
-::res://Sounds/::1690911331
-::res://Sounds/Ambience/::1690899265
-Ambience1.wav::AudioStreamWAV::5407692566724484252::1690898652::1690899265::1::::<><>::
-::res://Sounds/Sfx/::1690911331
-FlashlightClick.wav::AudioStreamWAV::9209597812543296811::1690911331::1690911331::1::::<><>::
+::res://::1690915137
+default_env.tres::Environment::6475503468103331188::1690915137::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1690891061::0::1::::<><>::
+icon.png::CompressedTexture2D::3632902161786781470::1690818316::1690834000::1::::<><>::
+Main.tscn::PackedScene::164480450181625893::1690915136::0::1::::<><>::uid://cjbr526c3b573::::res://Sounds/Ambience/Ambience1.wav<>res://Scripts/Main Prot Scene/Main.gd<>res://Scripts/Main Prot Scene/Player.gd<>res://Scripts/Main Prot Scene/Flashlight.gd<>res://Scripts/Main Prot Scene/AI/Freddy.gd<>uid://d4hgy3m7uffff::::res://Sounds/Sfx/FlashlightClick.wav<>uid://coeg14l8fbncd::::res://Images/UI/MoveArrow.png
+::res://Images/::1690901372
+::res://Images/UI/::1690901512
+MoveArrow.png::CompressedTexture2D::5764154963609128499::1690901379::1690901512::1::::<><>::
+::res://Scenes/::1690900468
+Main.tscn::PackedScene::164480450181625893::1690900468::0::1::::<><>::res://Player.gd<>uid://cjbr526c3b573
+::res://Scripts/::1690918377
+Global.gd::GDScript::-1::1690903871::0::1::::<>Node<>::
+AmbiencePlayer.gd::GDScript::-1::1690918377::0::1::::<>Node3D<>::
+::res://Scripts/Main Prot Scene/::1690915136
+Flashlight.gd::GDScript::-1::1690915136::0::1::::<>SpotLight3D<>::
+Main.gd::GDScript::-1::1690913896::0::1::::<>Node<>::
+Player.gd::GDScript::-1::1690914119::0::1::::<>Node3D<>::
+::res://Scripts/Main Prot Scene/AI/::1690902828
+Freddy.gd::GDScript::-1::1690902828::0::1::::<>Node3D<>::
+::res://Sounds/::1690911082
+::res://Sounds/Ambience/::1690918651
+Ambience1.wav::AudioStreamWAV::5407692566724484252::1690898064::1690898846::1::::<><>::
+Ambience2.wav::AudioStreamWAV::2226473853132185383::1690918344::1690918347::1::::<><>::
+Ambience3.wav::AudioStreamWAV::1564016710631197200::1690918651::1690918655::1::::<><>::
+::res://Sounds/Sfx/::1690911110
+FlashlightClick.wav::AudioStreamWAV::9209597812543296811::1690911108::1690911110::1::::<><>::
