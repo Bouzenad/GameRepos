@@ -2,22 +2,6 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1"]
 
-[sub_resource type="Animation" id="Animation_iiysb"]
-resource_name = "TurnLeft"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(0.287175, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0.0872665)]
-}
-
 [sub_resource type="Animation" id="Animation_yvfq5"]
 length = 0.001
 tracks/0/type = "value"
@@ -45,6 +29,34 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_jxphv"]
+resource_name = "TurnBackBehind"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.28, 1),
+"update": 0,
+"values": [Vector3(0, 3.12414, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.785398, 0, -0.349066), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_ak2qr"]
 resource_name = "TurnBackLeft"
 length = 0.2
@@ -59,22 +71,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.287175, 1),
 "update": 0,
 "values": [Vector3(0, 1.5708, 0.0872665), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_62dqm"]
-resource_name = "TurnRight"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(0.287175, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, -0.0872665)]
 }
 
 [sub_resource type="Animation" id="Animation_nr4gl"]
@@ -121,8 +117,8 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(-0.785398, 0, -0.349066), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_jxphv"]
-resource_name = "TurnBackBehind"
+[sub_resource type="Animation" id="Animation_iiysb"]
+resource_name = "TurnLeft"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -132,21 +128,25 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(0.28, 1),
+"transitions": PackedFloat32Array(0.287175, 1),
 "update": 0,
-"values": [Vector3(0, 3.12414, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0.0872665)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+
+[sub_resource type="Animation" id="Animation_62dqm"]
+resource_name = "TurnRight"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.287175, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.785398, 0, -0.349066), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, -0.0872665)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ihqhy"]
@@ -213,7 +213,7 @@ transform = Transform3D(14.4495, 0, 0, 0, 1.45663, 0, 0, 0, 0.955591, 0.833143, 
 transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, 5.31371, 4.28919, 23.5539)
 
 [node name="Wall7" type="CSGBox3D" parent="World/Map"]
-transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, -4.22989, 3.93457, 23.5539)
+transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, -4.22989, 4.32329, 23.5539)
 
 [node name="Label3D" type="Label3D" parent="World/Map"]
 transform = Transform3D(-0.412977, 0, 0.910741, 0, 1, 0, -0.910741, 0, -0.412977, -3.75615, 4, 18.3622)
