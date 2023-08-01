@@ -16,5 +16,6 @@ func _process(delta: float) -> void:
 		look_at_from_position(from, to)
 	
 func _input(event: InputEvent) -> void:
-	from = cam.project_ray_origin(event.position)
-	to = from + cam.project_ray_normal(event.position)
+	if event is InputEventMouseMotion:
+		from = cam.project_ray_origin(event.position)
+		to = from + cam.project_ray_normal(event.position)
