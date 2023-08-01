@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690842914
-default_env.tres::Environment::6475503468103331188::1690839768::0::1::::<><>::
+::res://::1690890625
+default_env.tres::Environment::6475503468103331188::1690889694::0::1::::<><>::
 icon.png::CompressedTexture2D::3632902161786781470::1690818316::1690834000::1::::<><>::
-Main.tscn::PackedScene::164480450181625893::1690839768::0::1::::<><>::res://Player.gd
-Player.gd::GDScript::-1::1690839515::0::1::::<>Node3D<>::
+Main.tscn::PackedScene::164480450181625893::1690889695::0::1::::<><>::res://Player.gd
+Player.gd::GDScript::-1::1690889656::0::1::::<>Node3D<>::

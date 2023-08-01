@@ -18,16 +18,19 @@ func _on_detect_right_mouse_entered() -> void:
 		look_right()
 		
 func _on_detect_bottom_mouse_entered() -> void:
-	if moving == false and head.rotation_degrees.y == 0:
+	if moving == false and (head.rotation_degrees.y == 0 or round(head.rotation_degrees.y) == 179):
 		look_behind()
 		
 func _on_detect_top_mouse_entered() -> void:
 	if moving == false and (head.rotation_degrees.y == 0 or round(head.rotation_degrees.y) == 179):
-		look_up()
+		pass
 
 func look_behind():
 	moving = true
-	CamAnim.play("TurnBehind")
+	if head.rotation_degrees.y == 0:
+		CamAnim.play("TurnBehind")
+	else:
+		CamAnim.play("TurnBackBehind")
 	await get_tree().create_timer(0.2).timeout
 	moving = false
 	
