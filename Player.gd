@@ -10,20 +10,20 @@ var moving = false
 
 func _on_detect_left_mouse_entered() -> void:
 	#checks if you r looking forward
-	if moving == false and head.rotation_degrees.y < 90 and round(head.rotation_degrees.y) != 179:
+	if moving == false and head.rotation_degrees.y < 90 and round(head.rotation_degrees.y) != 179 and camera.rotation_degrees.x == 0:
 		look_left()
 
 func _on_detect_right_mouse_entered() -> void:
-	if moving == false and head.rotation_degrees.y > -90 and round(head.rotation_degrees.y) != 179:
+	if moving == false and head.rotation_degrees.y > -90 and round(head.rotation_degrees.y) != 179 and camera.rotation_degrees.x == 0:
 		look_right()
 		
 func _on_detect_bottom_mouse_entered() -> void:
-	if moving == false and (head.rotation_degrees.y == 0 or round(head.rotation_degrees.y) == 179):
+	if moving == false and (head.rotation_degrees.y == 0 or round(head.rotation_degrees.y) == 179) and camera.rotation_degrees.x == 0:
 		look_behind()
 		
 func _on_detect_top_mouse_entered() -> void:
-	if moving == false and (head.rotation_degrees.y == 0 or round(head.rotation_degrees.y) == 179):
-		pass
+	if moving == false and head.rotation_degrees.y == 0:
+		look_up()
 
 func look_behind():
 	moving = true
@@ -36,8 +36,10 @@ func look_behind():
 	
 func look_up():
 	moving = true
-	if round(head.rotation_degrees.y) == 179:
-		CamAnim.play("TurnBackBehind")
+	if camera.rotation_degrees.x == 0:
+		CamAnim.play("TurnUp")
+	else:
+		CamAnim.play("TurnBackUp")
 	await  get_tree().create_timer(0.2).timeout
 	moving = false
 

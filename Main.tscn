@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://clw77e6wtpxd"]
+[gd_scene load_steps=16 format=3 uid="uid://clw77e6wtpxd"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://cjbr526c3b573" path="res://Sounds/Ambience/Ambience1.wav" id="1_rnekf"]
 
 [sub_resource type="Animation" id="Animation_yvfq5"]
 length = 0.001
@@ -54,7 +55,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.785398, 0, -0.349066), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, -0.0872665), Vector3(-0.349066, 0, -0.0872665), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ak2qr"]
@@ -89,8 +90,8 @@ tracks/0/keys = {
 "values": [Vector3(0, -1.5708, -0.0872665), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_nca58"]
-resource_name = "TurnBehind"
+[sub_resource type="Animation" id="Animation_7gn5n"]
+resource_name = "TurnBackUp"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -102,6 +103,34 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(0.28, 1),
 "update": 0,
+"values": [Vector3(0, 0, -0.0872665), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.28, 1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nca58"]
+resource_name = "TurnBehind"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1.045, 1),
+"update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 3.12414, 0)]
 }
 tracks/1/type = "value"
@@ -112,9 +141,9 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(0.353553, 1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.785398, 0, -0.349066), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.349066, 0, -0.0872665), Vector3(0, 0, -0.0872665)]
 }
 
 [sub_resource type="Animation" id="Animation_iiysb"]
@@ -149,15 +178,45 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, -1.5708, -0.0872665)]
 }
 
+[sub_resource type="Animation" id="Animation_kynki"]
+resource_name = "TurnUp"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.28, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.0872665)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.28, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.5708, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ihqhy"]
 _data = {
 "RESET": SubResource("Animation_yvfq5"),
 "TurnBackBehind": SubResource("Animation_jxphv"),
 "TurnBackLeft": SubResource("Animation_ak2qr"),
 "TurnBackRight": SubResource("Animation_nr4gl"),
+"TurnBackUp": SubResource("Animation_7gn5n"),
 "TurnBehind": SubResource("Animation_nca58"),
 "TurnLeft": SubResource("Animation_iiysb"),
-"TurnRight": SubResource("Animation_62dqm")
+"TurnRight": SubResource("Animation_62dqm"),
+"TurnUp": SubResource("Animation_kynki")
 }
 
 [sub_resource type="Environment" id="Environment_nqge6"]
@@ -222,6 +281,16 @@ text = "This is the left"
 [node name="Label3D2" type="Label3D" parent="World/Map"]
 transform = Transform3D(-0.018604, 0, -0.999827, 0, 1, 0, 0.999827, 0, -0.018604, 5.02863, 4, 19.145)
 text = "This is the right"
+
+[node name="Label3D3" type="Label3D" parent="World/Map"]
+transform = Transform3D(0.999803, 0.0083577, -0.0180285, -0.0185601, 0.0686247, -0.99747, -0.00709933, 0.997607, 0.0687663, -0.852855, 7.7812, 16.6514)
+text = "This is the top"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="World/Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+stream = ExtResource("1_rnekf")
+autoplay = true
+max_distance = 3489.19
 
 [node name="Player" type="Node3D" parent="World"]
 script = ExtResource("1")
