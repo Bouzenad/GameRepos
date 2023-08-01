@@ -8,8 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-func _input(event: InputEvent) -> void:
-	if round(head.rotation_degrees.y) == 179:
-		rotation += Vector3(Input.get_last_mouse_velocity().y, Input.get_last_mouse_velocity().x, 0) * -0.0001
+	var mouse = get_viewport().get_mouse_position()
+	look_at(mouse)
