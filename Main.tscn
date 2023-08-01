@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://clw77e6wtpxd"]
+[gd_scene load_steps=5 format=3 uid="uid://clw77e6wtpxd"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1"]
 
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2lke"]
 size = Vector2(88, 667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhvf6"]
+size = Vector2(755, 70)
 
 [node name="Main" type="Node"]
 
@@ -54,6 +57,14 @@ transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, 5.31371, 4
 [node name="Wall7" type="CSGBox3D" parent="World/Map"]
 transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, -4.22989, 3.93457, 23.5539)
 
+[node name="Label3D" type="Label3D" parent="World/Map"]
+transform = Transform3D(-0.412977, 0, 0.910741, 0, 1, 0, -0.910741, 0, -0.412977, -3.75615, 4, 18.3622)
+text = "This is the left"
+
+[node name="Label3D2" type="Label3D" parent="World/Map"]
+transform = Transform3D(-0.018604, 0, -0.999827, 0, 1, 0, 0.999827, 0, -0.018604, 5.02863, 4, 19.145)
+text = "This is the right"
+
 [node name="Player" type="Node3D" parent="World"]
 script = ExtResource("1")
 
@@ -94,5 +105,14 @@ shape = SubResource("RectangleShape2D_c2lke")
 position = Vector2(1115, 323.5)
 shape = SubResource("RectangleShape2D_c2lke")
 
+[node name="Bottom" type="Node2D" parent="Overlay"]
+
+[node name="DetectBottom" type="Area2D" parent="Overlay/Bottom"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overlay/Bottom/DetectBottom"]
+position = Vector2(589.5, 621)
+shape = SubResource("RectangleShape2D_mhvf6")
+
 [connection signal="mouse_entered" from="Overlay/Left/DetectLeft" to="World/Player" method="_on_detect_left_mouse_entered"]
 [connection signal="mouse_entered" from="Overlay/Right/DetectRight" to="World/Player" method="_on_detect_right_mouse_entered"]
+[connection signal="mouse_entered" from="Overlay/Bottom/DetectBottom" to="World/Player" method="_on_detect_bottom_mouse_entered"]
