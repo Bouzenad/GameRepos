@@ -1,5 +1,4 @@
 res://default_env.tres
 res://Main.tscn
-res://Scripts/Main Prot Scene/Main.gd
-res://Scripts/Main Prot Scene/Player.gd
 res://Scripts/Main Prot Scene/Flashlight.gd
+res://Scripts/Main Prot Scene/Player.gd

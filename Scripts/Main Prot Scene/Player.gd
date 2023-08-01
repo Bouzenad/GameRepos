@@ -37,7 +37,6 @@ func look_behind():
 		CamAnim.play("TurnBackBehind")
 		main.loc = "front"
 	await get_tree().create_timer(0.2).timeout
-	get_node("Flashlight/Click").play()
 	moving = false
 
 
