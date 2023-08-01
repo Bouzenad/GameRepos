@@ -1,5 +1,5 @@
-Node2D
-MeshInstance3D
+CanvasLayer
+TextureRect
 Node3D
 AudioStreamPlayer
 AudioStreamPlayer3D
@@ -8,6 +8,7 @@ Label3D
 TextEdit
 CollisionShape2D
 Area2D
+Node2D
 MeshInstance2D
 OmniLight3D
 WorldEnvironment

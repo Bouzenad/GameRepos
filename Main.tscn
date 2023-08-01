@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://bhluiglhts28g"]
+[gd_scene load_steps=22 format=3 uid="uid://clw77e6wtpxd"]
 
 [ext_resource type="AudioStream" uid="uid://cjbr526c3b573" path="res://Sounds/Ambience/Ambience1.wav" id="1_rnekf"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/Player.gd" id="2_culn2"]
 [ext_resource type="Script" path="res://Scripts/Main Prot Scene/AI/Freddy.gd" id="3_x25lq"]
+[ext_resource type="Texture2D" uid="uid://coeg14l8fbncd" path="res://Images/UI/MoveArrow.png" id="4_7c2b5"]
 
 [sub_resource type="Animation" id="Animation_yvfq5"]
 length = 0.001
@@ -227,11 +228,17 @@ albedo_color = Color(0.00392157, 0.176471, 0.356863, 1)
 
 [sub_resource type="Environment" id="Environment_nqge6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1308n"]
+size = Vector2(90, 398)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmrya"]
+size = Vector2(393.5, 89)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2lke"]
-size = Vector2(88, 667)
+size = Vector2(90, 398)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhvf6"]
-size = Vector2(755, 70)
+size = Vector2(392, 88)
 
 [node name="Main" type="Node"]
 
@@ -346,30 +353,66 @@ mesh = SubResource("BoxMesh_glgn0")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_nqge6")
 
-[node name="Overlay" type="Node2D" parent="."]
+[node name="Overlay" type="CanvasLayer" parent="."]
 
 [node name="Left" type="Node2D" parent="Overlay"]
 
 [node name="DetectLeft" type="Area2D" parent="Overlay/Left"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Overlay/Left/DetectLeft"]
-position = Vector2(41, 323.5)
-shape = SubResource("RectangleShape2D_c2lke")
+position = Vector2(48, 323)
+shape = SubResource("RectangleShape2D_1308n")
+
+[node name="TextureRect" type="TextureRect" parent="Overlay/Left"]
+modulate = Color(1, 1, 1, 0.564706)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = 520.0
+offset_right = 398.0
+offset_bottom = 611.0
+grow_vertical = 2
+rotation = -1.5708
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_7c2b5")
 
 [node name="Top" type="Node2D" parent="Overlay"]
 
 [node name="DetectTop" type="Area2D" parent="Overlay/Top"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Overlay/Top/DetectTop"]
-position = Vector2(589.5, 33)
-shape = SubResource("RectangleShape2D_mhvf6")
+position = Vector2(590.25, 48.5)
+shape = SubResource("RectangleShape2D_tmrya")
+
+[node name="TextureRect" type="TextureRect" parent="Overlay/Top"]
+modulate = Color(1, 1, 1, 0.564706)
+offset_left = 392.0
+offset_top = 3.0
+offset_right = 788.0
+offset_bottom = 94.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_7c2b5")
 
 [node name="Right" type="Node2D" parent="Overlay"]
+
+[node name="TextureRect" type="TextureRect" parent="Overlay/Right"]
+modulate = Color(1, 1, 1, 0.564706)
+offset_left = 1150.0
+offset_top = 126.0
+offset_right = 1546.0
+offset_bottom = 217.0
+rotation = 1.5708
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_7c2b5")
 
 [node name="DetectRight" type="Area2D" parent="Overlay/Right"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Overlay/Right/DetectRight"]
-position = Vector2(1115, 323.5)
+position = Vector2(1104, 323.5)
 shape = SubResource("RectangleShape2D_c2lke")
 
 [node name="Bottom" type="Node2D" parent="Overlay"]
@@ -377,8 +420,19 @@ shape = SubResource("RectangleShape2D_c2lke")
 [node name="DetectBottom" type="Area2D" parent="Overlay/Bottom"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Overlay/Bottom/DetectBottom"]
-position = Vector2(589.5, 621)
+position = Vector2(589, 598)
 shape = SubResource("RectangleShape2D_mhvf6")
+
+[node name="TextureRect" type="TextureRect" parent="Overlay/Bottom"]
+modulate = Color(1, 1, 1, 0.564706)
+offset_left = 786.0
+offset_top = 644.0
+offset_right = 1182.0
+offset_bottom = 735.0
+rotation = 3.14159
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_7c2b5")
 
 [connection signal="mouse_entered" from="Overlay/Left/DetectLeft" to="World/Player" method="_on_detect_left_mouse_entered"]
 [connection signal="mouse_entered" from="Overlay/Top/DetectTop" to="World/Player" method="_on_detect_top_mouse_entered"]
