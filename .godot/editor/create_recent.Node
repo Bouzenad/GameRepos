@@ -1,4 +1,5 @@
 CanvasLayer
+TextureRect
 Node3D
 AudioStreamPlayer
 AudioStreamPlayer3D
