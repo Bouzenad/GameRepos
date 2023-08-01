@@ -1,6 +1,164 @@
-[gd_scene load_steps=5 format=3 uid="uid://clw77e6wtpxd"]
+[gd_scene load_steps=13 format=3 uid="uid://clw77e6wtpxd"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1"]
+
+[sub_resource type="Animation" id="Animation_iiysb"]
+resource_name = "TurnLeft"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.287175, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0.0872665)]
+}
+
+[sub_resource type="Animation" id="Animation_yvfq5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ak2qr"]
+resource_name = "TurnBackLeft"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.287175, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0.0872665), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_62dqm"]
+resource_name = "TurnRight"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.287175, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, -0.0872665)]
+}
+
+[sub_resource type="Animation" id="Animation_nr4gl"]
+resource_name = "TurnBackRight"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.287175, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, -0.0872665), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nca58"]
+resource_name = "TurnBehind"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.28, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.12414, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(0.353553, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.785398, 0, -0.349066), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jxphv"]
+resource_name = "TurnBackBehind"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.28, 1),
+"update": 0,
+"values": [Vector3(0, 3.12414, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.785398, 0, -0.349066), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ihqhy"]
+_data = {
+"RESET": SubResource("Animation_yvfq5"),
+"TurnBackBehind": SubResource("Animation_jxphv"),
+"TurnBackLeft": SubResource("Animation_ak2qr"),
+"TurnBackRight": SubResource("Animation_nr4gl"),
+"TurnBehind": SubResource("Animation_nca58"),
+"TurnLeft": SubResource("Animation_iiysb"),
+"TurnRight": SubResource("Animation_62dqm")
+}
 
 [sub_resource type="Environment" id="Environment_nqge6"]
 
@@ -80,8 +238,13 @@ fov = 65.0
 near = 0.01
 far = 8192.0
 
+[node name="HeadMovement" type="AnimationPlayer" parent="World/Player/Head"]
+libraries = {
+"": SubResource("AnimationLibrary_ihqhy")
+}
+
 [node name="OmniLight3D" type="OmniLight3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95157, 17.2652)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.06233, 16.7338)
 omni_range = 4096.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -113,6 +276,15 @@ shape = SubResource("RectangleShape2D_c2lke")
 position = Vector2(589.5, 621)
 shape = SubResource("RectangleShape2D_mhvf6")
 
+[node name="Top" type="Node2D" parent="Overlay"]
+
+[node name="DetectTop" type="Area2D" parent="Overlay/Top"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overlay/Top/DetectTop"]
+position = Vector2(589.5, 33)
+shape = SubResource("RectangleShape2D_mhvf6")
+
 [connection signal="mouse_entered" from="Overlay/Left/DetectLeft" to="World/Player" method="_on_detect_left_mouse_entered"]
 [connection signal="mouse_entered" from="Overlay/Right/DetectRight" to="World/Player" method="_on_detect_right_mouse_entered"]
 [connection signal="mouse_entered" from="Overlay/Bottom/DetectBottom" to="World/Player" method="_on_detect_bottom_mouse_entered"]
+[connection signal="mouse_entered" from="Overlay/Top/DetectTop" to="World/Player" method="_on_detect_top_mouse_entered"]
