@@ -326,7 +326,7 @@ libraries = {
 }
 
 [node name="Flashlight" type="SpotLight3D" parent="World/Player"]
-transform = Transform3D(-0.996825, 0, -0.0796248, 0, 1, 0, 0.0796248, 0, -0.996825, 0, 4.57827, 17)
+transform = Transform3D(-0.964281, 0, -0.264883, 0, 1, 0, 0.264883, 0, -0.964281, 0, 4.57827, 17)
 light_color = Color(1, 0.886275, 0.780392, 1)
 spot_range = 34.733
 spot_attenuation = 0.554784

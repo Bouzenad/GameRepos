@@ -1,6 +1,10 @@
 extends SpotLight3D
 
 @onready var head = get_parent().get_node("Head")
+@onready var cam = head.get_node("Camera3D")
+var from
+var to
+var MousePos: Vector3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -8,8 +12,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-func _input(event: InputEvent) -> void:
 	if round(head.rotation_degrees.y) == 179:
-		rotation += Vector3(Input.get_last_mouse_velocity().y, Input.get_last_mouse_velocity().x, 0) * -0.0001
+		look_at_from_position(from, to)
+	
+func _input(event: InputEvent) -> void:
+	from = cam.project_ray_origin(event.position)
+	to = from + cam.project_ray_normal(event.position)
